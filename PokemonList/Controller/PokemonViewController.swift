@@ -9,7 +9,6 @@ import UIKit
 
 class PokemonViewController: UIViewController
 {
-    
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     var pokey: [Card] = []
@@ -95,28 +94,21 @@ class PokemonViewController: UIViewController
         
     }
     
-    
-    @IBAction func addToFavouritesTapped(_ sender: Any)
+    @IBAction func deleteAllUserDefaults(_ sender: Any)
     {
-        let currentRow = tableViewOutlet.indexPathForSelectedRow?.row
-        
-        
-        if favouriteCards[pokey[currentRow ?? 0].id] == false
+        DispatchQueue.main.async
         {
-            favouriteCards[pokey[currentRow ?? 0].id] == true
-        }
-        else
-        {
-            favouriteCards[pokey[currentRow ?? 0].id] == false
+            let alert = UIAlertController(title: "Attention!", message: "Do you really want to delete all favourites?", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+                let domain = Bundle.main.bundleIdentifier!
+                UserDefaults.standard.removePersistentDomain(forName: domain)
+                UserDefaults.standard.synchronize()
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
         
-        print(favouriteCards[pokey[currentRow ?? 0].id])
-        print(currentRow)
-        
-        userDefaults.set(favouriteCards, forKey: "favouriteCards")
-        basicAlert(title: "Attention!", message: "Pokèmon successfully added to favourites!")
     }
-     
     
     // MARK: - Navigation
 
@@ -147,7 +139,6 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        print("Pokey count: ", pokey.count)
         return pokey.count
     }
     
@@ -158,6 +149,24 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource
         let pok = pokey[indexPath.row]
         cell.setupUI(withDataFrom: pok)
         
+        cell.buttonAction = { [unowned self] in
+            let selectedIndexPath = indexPath.row
+            print("selectedIndexPath: ", selectedIndexPath)
+            print(pokey[indexPath.row].name)
+            
+            if favouriteCards[pokey[indexPath.row].id] == false
+            {
+                favouriteCards[pokey[indexPath.row].id] = true
+            }
+            else
+            {
+                favouriteCards[pokey[indexPath.row].id] = false
+            }
+            
+            userDefaults.set(favouriteCards, forKey: "favouriteCards")
+            basicAlert(title: "Attention!", message: "Pokèmon successfully added to favourites!")
+        }
+        
         return cell
         
     }
@@ -165,11 +174,6 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 280
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        <#code#>
     }
 }
 

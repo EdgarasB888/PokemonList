@@ -13,27 +13,23 @@ class LearnMoreViewController: UIViewController
     @IBOutlet weak var descriptionLabel: UILabel!
     
     var titleLabelText = ""
-    var descriptionLabelText = "No info to display!"
+    var descriptionLabelText = ""
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         titleLabel.text = titleLabelText
-        descriptionLabel.text = descriptionLabelText
-
-        // Do any additional setup after loading the view.
+                
+        if(descriptionLabelText == "")
+        {
+            descriptionLabel.textAlignment = .center
+            descriptionLabelText = "No info to display!"
+        }
+        else
+        {
+            descriptionLabel.text = descriptionLabelText
+        }
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

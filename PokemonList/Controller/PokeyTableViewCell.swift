@@ -16,6 +16,17 @@ class PokeyTableViewCell: UITableViewCell
     @IBOutlet weak var evolvesFromLabel: UILabel!
     @IBOutlet weak var hpLabel: UILabel!
     
+    var buttonAction : (() -> ())?
+    
+    
+    @IBAction func addToFavouritesTapped(_ sender: Any)
+    {
+        buttonAction?()
+        
+        //print(favouriteCards[pokey[currentRow ?? 0].id])
+        //print(currentRow)
+    }
+     
     override func prepareForReuse()
     {
         pokeyImageView.image = nil
@@ -48,4 +59,6 @@ class PokeyTableViewCell: UITableViewCell
         }
         
     }
+    
+    
 }

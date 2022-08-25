@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8845152728B63FD9004CE14A /* FavouritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845152628B63FD9004CE14A /* FavouritesTableViewCell.swift */; };
 		8851081528B418C100EDDC73 /* LearnMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8851081428B418C100EDDC73 /* LearnMoreViewController.swift */; };
 		88959C9428B2CD63007C3061 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88959C9328B2CD63007C3061 /* DetailViewController.swift */; };
 		88959C9628B2CDA6007C3061 /* FavouritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88959C9528B2CDA6007C3061 /* FavouritesTableViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8845152628B63FD9004CE14A /* FavouritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewCell.swift; sourceTree = "<group>"; };
 		8851081428B418C100EDDC73 /* LearnMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMoreViewController.swift; sourceTree = "<group>"; };
 		88959C9328B2CD63007C3061 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		88959C9528B2CDA6007C3061 /* FavouritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewController.swift; sourceTree = "<group>"; };
@@ -72,8 +74,8 @@
 				88CE549D28B29B6C006FD8F7 /* Model */,
 				88CE549A28B29A7E006FD8F7 /* View */,
 				88CE549C28B29AB5006FD8F7 /* Controller */,
-				88CE548F28B29A75006FD8F7 /* Assets.xcassets */,
 				88CE549428B29A75006FD8F7 /* Info.plist */,
+				88CE548F28B29A75006FD8F7 /* Assets.xcassets */,
 			);
 			path = PokemonList;
 			sourceTree = "<group>";
@@ -104,6 +106,7 @@
 				88959C9328B2CD63007C3061 /* DetailViewController.swift */,
 				88959C9528B2CDA6007C3061 /* FavouritesTableViewController.swift */,
 				8851081428B418C100EDDC73 /* LearnMoreViewController.swift */,
+				8845152628B63FD9004CE14A /* FavouritesTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				8851081528B418C100EDDC73 /* LearnMoreViewController.swift in Sources */,
 				88CE54A128B29BD6006FD8F7 /* PokeyTableViewCell.swift in Sources */,
 				88CE548928B29A74006FD8F7 /* SceneDelegate.swift in Sources */,
+				8845152728B63FD9004CE14A /* FavouritesTableViewCell.swift in Sources */,
 				88959C9628B2CDA6007C3061 /* FavouritesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
